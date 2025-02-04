@@ -3,7 +3,6 @@ package br.com.GerenciadorDeEstoque.controller;
 import java.net.URI;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,10 +39,9 @@ public class ProdutoController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<ProdutoOutDto> atualizarProduto(
-	    @PathVariable Long id,
-	    @RequestBody ProdutoInsertDto updates) {
-	    ProdutoOutDto produtoAtualizado = produtoService.atualizarProduto(id, updates);
-	    return ResponseEntity.ok(produtoAtualizado);
+	public ResponseEntity<ProdutoOutDto> atualizarProduto(@PathVariable Long id,
+			@RequestBody ProdutoInsertDto updates) {
+		ProdutoOutDto produtoAtualizado = produtoService.atualizarProduto(id, updates);
+		return ResponseEntity.ok(produtoAtualizado);
 	}
 }
