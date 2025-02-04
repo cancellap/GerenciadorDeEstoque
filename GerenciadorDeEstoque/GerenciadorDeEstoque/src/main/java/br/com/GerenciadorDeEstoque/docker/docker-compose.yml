@@ -1,0 +1,12 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_gerenciadorDeEstoque
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./dados:/var/lib/rabbitmq/
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "1234"
